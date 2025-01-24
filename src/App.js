@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import ChatWindow from './Components/ChatWindow';
+import LoginPage from './Components/FireAuth/LoginPage';
+import SignUp from './Components/FireAuth/SignUp';
+import SignOut from './Components/FireAuth/SignOut';
 
-function App() {
+
+const App = () => {
+  const [user, setUser] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        {user ? (
+          <>
+            <SignOut onSignOut={() => setUser(null)} />
+            <ChatWindow />
+          </>
+        ) : (
+          <Routes>
+            <Route path="/LoginPage" element={<LoginPage onLogin={() => setUser(true)} />} />
+            <Route path="/SignUp" element={<SignUp />} />
+            <Route path="*" element={<Navigate to="/LoginPage" />} />
+          </Routes>
+        )}
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

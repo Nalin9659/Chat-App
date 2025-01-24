@@ -1,0 +1,45 @@
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90vh; /* Reduce height slightly to add top spacing */
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto; /* Center horizontally and add top spacing */
+  background-color: #f4f4f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.welcome-message {
+  padding: 12px 16px;
+  background-color: #7b3d3b; /* Change the color as needed */
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  border-radius: 20px;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background-color: #f4f4f8;
+}
