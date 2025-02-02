@@ -1,7 +1,7 @@
-import React from 'react';
-import MessageBubble from './MessageBubble';
-import MessageInput from './MessageInput';
-import './Style/ChatWindow.css'; // Ensure you have the styles imported
+import React from "react";
+import MessageBubble from "./MessageBubble";
+import MessageInput from "./MessageInput";
+import "./Style/ChatWindow.css"; // Ensure you have the styles imported
 
 const ChatWindow = ({ messages, onSendMessage }) => (
   <div className="chat-window">
