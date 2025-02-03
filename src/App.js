@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
+  BrowserRouter as Router, Route, Routes, Navigate,
+} 
+from "react-router-dom";
 import ChatWindow from "./Components/ChatWindow";
 import LoginPage from "./Components/FireAuth/LoginPage";
 import SignUp from "./Components/FireAuth/SignUp";
